@@ -1,5 +1,6 @@
 Security - https://octoperf.com/blog/2018/03/08/securing-rest-api-spring-security/
 Rest API - http://www.baeldung.com/rest-with-spring-series/
+https://www.boraji.com/spring-mvc-5-spring-security-5-hibernate-5-example
 
 TESTING :
 
