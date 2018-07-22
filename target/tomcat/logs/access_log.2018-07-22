@@ -1,0 +1,6 @@
+127.0.0.1 - - [22/Jul/2018:19:45:14 +0530] "POST /bidengine/webapi/bidservices/user HTTP/1.1" 200 84 http-bio-8080-exec-1 308
+127.0.0.1 - - [22/Jul/2018:19:45:14 +0530] "POST /bidengine/webapi/bidservices/biditem HTTP/1.1" 200 154 http-bio-8080-exec-3 50
+127.0.0.1 - - [22/Jul/2018:19:45:14 +0530] "POST /bidengine/webapi/bidservices/user HTTP/1.1" 200 97 http-bio-8080-exec-5 11
+127.0.0.1 - - [22/Jul/2018:19:46:35 +0530] "POST /bidengine/webapi/bidservices/user HTTP/1.1" 200 97 http-bio-8080-exec-7 0
+127.0.0.1 - - [22/Jul/2018:19:46:35 +0530] "POST /bidengine/webapi/bidservices/biditem HTTP/1.1" 200 154 http-bio-8080-exec-9 0
+127.0.0.1 - - [22/Jul/2018:19:46:35 +0530] "POST /bidengine/webapi/bidservices/user HTTP/1.1" 200 97 http-bio-8080-exec-1 16
