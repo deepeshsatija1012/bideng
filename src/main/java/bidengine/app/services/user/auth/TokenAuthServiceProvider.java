@@ -29,10 +29,11 @@ public class TokenAuthServiceProvider extends AbstractUserDetailsAuthenticationP
 	@Override
 	protected UserDetails retrieveUser(String username, UsernamePasswordAuthenticationToken authentication)
 			throws AuthenticationException {
-		String token = authentication.getCredentials().toString();
-		if(token==null) {
+		Object creds = authentication.getCredentials();
+		if(creds==null) {
 			new AuthenticationCredentialsNotFoundException("No token found with header.");
 		}
+		String token = creds.toString();
 		UserObject user = userAuthService.findByToken(token);
 		if(user!=null && user.getUsername()!=null && user.getUsername().equals(username)) {
 			UserDetails userDetails = User.builder().username(user.getUsername()).password(user.getPassword())
