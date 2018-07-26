@@ -21,6 +21,7 @@ import bidengine.app.response.CreateUserResponse;
 
 public class BidControllerTest {
 	
+	
 	public CreateUserResponse createUser() throws ClientProtocolException, IOException {
 		CloseableHttpClient client = HttpClients.createDefault();
 	    HttpPost httpPost = new HttpPost("http://localhost:8080//bidengine/webapi/bidservices/user");
@@ -52,7 +53,6 @@ public class BidControllerTest {
 		Assert.assertTrue(resp.getCode()==0 || resp.getCode()==1);
 		System.out.println("String User Id : " + resp.getUserId());
 	}
-	
 	
 	@Test
 	public void bidservices_createbid() 

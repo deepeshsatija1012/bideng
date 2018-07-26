@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans xmlns="http://www.springframework.org/schema/security"
+	xmlns:beans="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+						http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security.xsd">
+
+
+	<beans:bean id="regexMatcher"
+		class="org.springframework.security.web.util.matcher.RegexRequestMatcher">
+		<beans:constructor-arg index="0"
+			value="/bidengine/webapi/bidservices/(user|userlogin)" />
+		<beans:constructor-arg index="1" value="POST" />
+	</beans:bean>
+
+	<beans:bean id="interceptUrlPattern"
+		class="org.springframework.security.web.util.matcher.NegatedRequestMatcher">
+		<beans:constructor-arg index="0" ref="regexMatcher" />
+	</beans:bean>
+
+	<authentication-manager>
+		<authentication-provider user-service-ref="userDetailService">
+<!-- 			<user-service id="userService"> -->
+<!-- 				<user name="deepesh" password="123" authorities="customer" /> -->
+<!-- 			</user-service> -->
+		</authentication-provider>
+	</authentication-manager>
+
+	<http auto-config="true" create-session="stateless" use-expressions="true">
+		<!-- access denied page -->
+		<access-denied-handler error-page="/403" />
+		<intercept-url pattern="/user" access="IS_AUTHENTICATED_ANONYMOUSLY"/>
+		<intercept-url pattern="/userlogin" access="ROLE_USER"/>
+		<intercept-url pattern="/biditem" access="ROLE_USER"/> 
+	</http>
+</beans:beans>

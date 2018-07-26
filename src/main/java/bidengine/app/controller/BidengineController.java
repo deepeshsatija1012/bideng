@@ -17,7 +17,7 @@ import bidengine.app.services.bid.items.BidItemsDao;
 import bidengine.app.services.user.UserDao;
 
 @RestController
-@RequestMapping("/webapi/bidservices")
+@RequestMapping("/bidengine/webapi/bidservices")
 public class BidengineController {
 	
 	@Autowired
