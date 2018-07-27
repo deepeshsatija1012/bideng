@@ -27,9 +27,10 @@
 
 	<http auto-config="true" create-session="stateless" use-expressions="true">
 		<!-- access denied page -->
-		<access-denied-handler error-page="/403" />
-		<intercept-url pattern="/user" access="IS_AUTHENTICATED_ANONYMOUSLY"/>
-		<intercept-url pattern="/userlogin" access="ROLE_USER"/>
-		<intercept-url pattern="/biditem" access="ROLE_USER"/> 
+<!-- 		<access-denied-handler ref="" /> -->
+		<csrf disabled="true"/>
+		<intercept-url pattern="/bidengine/webapi/bidservices/user" access="permitAll" method="POST" />
+		<intercept-url pattern="/bidengine/webapi/bidservices/userlogin" access="ROLE_USER" method="POST"/>
+		<intercept-url pattern="/bidengine/webapi/bidservices/biditem" access="ROLE_USER" method="POST"/> 
 	</http>
 </beans:beans>

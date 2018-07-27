@@ -24,7 +24,7 @@ public class BidControllerTest {
 	
 	public CreateUserResponse createUser() throws ClientProtocolException, IOException {
 		CloseableHttpClient client = HttpClients.createDefault();
-	    HttpPost httpPost = new HttpPost("http://localhost:8080//bidengine/webapi/bidservices/user");
+	    HttpPost httpPost = new HttpPost("http://127.0.0.1:8080/bidengine/webapi/bidservices/user");
 	    User req = new User();
 	    req.setPassword("deepesh");
 	    req.setUsername("deepesh");
@@ -35,7 +35,6 @@ public class BidControllerTest {
 	    System.out.println("JSON : " + json);
 	    StringEntity entity = new StringEntity(json);
 	    httpPost.setEntity(entity);
-	    httpPost.setHeader("Accept", "application/json");
 	    httpPost.setHeader("Content-type", "application/json");
 	 
 	    CloseableHttpResponse response = client.execute(httpPost);
